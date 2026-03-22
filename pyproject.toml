@@ -1,9 +1,9 @@
 [project]
 name = "mcfg_parser"
-version = "0.1.0"
-description = "A module that can build a multiple context free grammar by the rules and alphabets provided and parse strings using agenda based parsing."
+version = "0.1.1"
+description = "A module that can build a multiple context free grammar with given rules and alphabets and parse strings using agenda based parsing."
 authors = [
-    { name = "Chihsheng Jin", email = "jin22@ur.rochester.edu" }
+    { name = "Chihsheng Jin", email = "chihsheng3421@gmail.com" }
 ]
 license = { text = "MIT" }
 dependencies = [
@@ -18,9 +18,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.poetry]
 name = "mcfg_parser"
-version = "0.1.0"
-description = "A module that can build a multiple context free grammar by the rules and alphabets provided and parse strings using agenda based parsing."
-authors = ["Chihsheng Jin <jin22@ur.rochester.edu>"]
+version = "0.1.1"
+description = "A module that can build a multiple context free grammar with given rules and alphabets and parse strings using agenda based parsing."
+authors = ["Chihsheng Jin <chihsheng3421@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/ChihshengJ/MCFG-parser"
 

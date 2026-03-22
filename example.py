@@ -1,40 +1,4 @@
-# Agenda Based Parser for Multiple Context-Free Grammars
-
-## Introduction
-
-This Python package implements an agenda-based parser as described in [Shieber et al. 1995](<https://doi.org/10.1016/0743-1066(95)00035-I>) for Multiple Context Free Grammars (MCFG). The parser supports parsing complex hierarchical structures that are common in natural language and other structured data. The module consists of three parts, the grammar-related classes, the parser-related classes, and a tree structure for representing parse trees. There's also a comprehensive test suite that can be easily tested using `Pytest`
-
-## Installation
-
-You can install `mcfg-parser` directly from GitHub using pip:
-
-```bash
-pip install git+https://github.com/ChihshengJ/MCFG-parser.git
-```
-
-To develop locally:
-
-```bash
-git clone https://github.com/ChihshengJ/MCFG-parser.git
-cd MCFG-parser
-uv sync
-```
-
-This creates a virtual environment, installs all dependencies, and installs the package in editable mode. You can then run tests with:
-
-```bash
-uv run pytest
-```
-
-## Usage
-
-Below is an example on how to utilize this package in your parsing task.
-
-### Initialize a Multiple Context Free Grammar
-
-```python
-from mcfg_parser import MultipleContextFreeGrammar
-from mcfg_parser import AgendaBasedParser
+from mcfg_parser import AgendaBasedParser, MultipleContextFreeGrammar
 
 g = MultipleContextFreeGrammar.from_strings(
     rules=[
@@ -106,22 +70,11 @@ g = MultipleContextFreeGrammar.from_strings(
         "P(with)",
     ],
     parser_class=AgendaBasedParser,
-    start_symbol="S",   # optional, defaults to "S"
+    start_symbol="S",
 )
-```
 
-### Parse a Sentence
 
-```python
-# validate mode returns a bool
-g.validate("the human saw the greyhound")
-
-# parse mode returns a set of parse trees
-trees = g.parse("the human saw the greyhound with the salmon")
+trees = g.parse("the human saw the greyhound that saw the human with a salmon")
 if trees:
     for t in trees:
         print(repr(t))
-
-# pre-tokenized lists also work
-g.validate(["the", "human", "saw", "the", "greyhound"])
-```
